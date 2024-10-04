@@ -1,0 +1,27 @@
+.flex{
+    display: flex;
+}
+
+.bgblack{
+    background-color: #000000;
+}
+
+.bgspoblack{
+    background-color: #121212;
+}
+
+.invertcolor{
+    filter: invert(1);
+}
+
+.justifycenter{
+    justify-content: center;
+}
+
+.aligncenter{
+    align-items: center;
+}
+
+nav{
+    justify-content: space-between;
+}
