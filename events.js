@@ -59,16 +59,16 @@ hoverNode(home, "fillwhite");
 let search = document.querySelector(".search");
 let searchsvg = document.querySelector(".search img")
 
-hoverNode(search, "highlight")
 hoverNode(search, "fillwhite")
+hoverNode(search, "highlight")
 
 search.addEventListener("click", (e) => {
-    search.classList.add("borderwhite");
+    search.classList.add("borderwhite","clicklight","clickwhite");
     e.stopPropagation();
 })
 
 document.body.addEventListener("click", () => {
-    search.classList.remove("borderwhite");
+    search.classList.remove("borderwhite","clicklight","clickwhite");
 })
 
 

@@ -44,11 +44,19 @@
     filter: invert(0%) brightness(200%);
 }
 
+.clickwhite {
+    filter: invert(0%) brightness(200%);
+}
+
 .borderwhite {
     border: 2px solid white;
 }
 
 .highlight {
+    background-color: #171717;
+}
+
+.clicklight {
     background-color: #171717;
 }
 
