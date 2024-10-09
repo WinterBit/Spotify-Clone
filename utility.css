@@ -1,27 +1,65 @@
-.flex{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.flex {
     display: flex;
 }
 
-.bgblack{
+.bgblack {
     background-color: #000000;
 }
 
-.bgspoblack{
+.bgspoblack {
     background-color: #121212;
 }
 
-.invertcolor{
+.invertcolor {
     filter: invert(1);
 }
 
-.justifycenter{
+.justifycenter {
     justify-content: center;
 }
 
-.aligncenter{
+.aligncenter {
     align-items: center;
 }
 
-nav{
-    justify-content: space-between;
+.grid {
+    display: grid;
+}
+
+.colorwhite {
+    color: white;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.hovereffect {
+    background-color: white;
+}
+
+.fillwhite {
+    filter: invert(0%) brightness(200%);
+}
+
+.borderwhite {
+    border: 2px solid white;
+}
+
+.highlight {
+    background-color: #171717;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }

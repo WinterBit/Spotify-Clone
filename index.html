@@ -5,20 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Clone - Web Player : Music for everyone</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/logo/Spotify-Icon-Logo.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="fonts.css">
 </head>
 
-<body>
+<body class="roboto-regular">
     <header>
-        <nav class="flex">
+        <nav class="flex aligncenter">
             <div class="navleft flex aligncenter justifycenter">
                 <img class="invertcolor" src="Assets/logo/spotify logo.svg" alt="Spotify logo">
-                <div>Spotify</div>
-                <div class="in">IN</div>
+                <div class="roboto-bold">Spotify</div>
+                <div class="in roboto-bold">&reg;</div>
             </div>
 
-            <div class="navmiddle flex justifycenter aligncenter">
+            <div class="navmiddle flex aligncenter">
 
                 <div class="home flex justifycenter aligncenter">
                     <img src="Assets/logo/home logo.svg" alt="Home">
@@ -26,12 +28,12 @@
 
                 <div class="search flex justifycenter aligncenter">
                     <img src="Assets/logo/search logo.svg" alt="">
-                    <input type="text" placeholder="What do you want to play">
+                    <input class="roboto-regular" type="text" placeholder="What do you want to play?">
                 </div>
 
             </div>
 
-            <div class="navright flex">
+            <div class="navright flex aligncenter">
                 <img src="Assets/logo/bell logo.svg" alt="Notification">
                 <div class="profile flex aligncenter justifycenter">W</div>
             </div>
@@ -40,15 +42,105 @@
 
     <main>
         <div class="container flex">
+
             <div class="left bgspoblack">
                 <div class="library flex aligncenter">
                     <img src="Assets/logo/library.svg" alt="Library">
-                    <div>Your Library</div>
-                </div> 
+                    <div class="roboto-bold">Your Library</div>
+                </div>
             </div>
-            <div class="right bgspoblack"></div>
+
+            <div class="right bgspoblack">
+                <div class="Albums"></div>
+                <footer>
+                    <div class="top gird">
+
+                        <div class="company">
+                            <b>Company</b>
+                            <ul>
+                                <li><a href="https://www.spotify.com/in-en/about-us/contact/">About</a></li>
+                                <li><a href="https://www.lifeatspotify.com/">Jobs</a></li>
+                                <li><a href="https://newsroom.spotify.com/">For the Records</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="community">
+                            <b>Communities</b>
+                            <ul>
+                                <li><a href="https://artists.spotify.com/home">For Artists</a></li>
+                                <li><a href="https://developer.spotify.com/">Developers</a></li>
+                                <li><a href="https://ads.spotify.com/en-IN/">Advertising</a></li>
+                                <li><a href="https://investors.spotify.com/home/default.aspx">Investors</a></li>
+                                <li><a href="https://spotifyforvendors.com/">Vendors</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="link">
+                            <b>Useful links</b>
+                            <ul>
+                                <li><a href="https://support.spotify.com/in-en/">Support</a></li>
+                                <li><a href="https://www.spotify.com/in-en/download/mac/">Free Mobile App</a></li>
+                            </ul>
+                        </div>
+                        <div class="plans">
+                            <b>Spotify Plans</b>
+                            <ul>
+                                <li><a
+                                        href="https://www.spotify.com/in-en/premium/?ref=spotifycom_footer_premium_individual">Premimum
+                                        Individual</a></li>
+                                <li><a href="https://www.spotify.com/in-en/duo/?ref=spotifycom_footer_premium_duo">Premimum
+                                        Duo</a></li>
+                                <li><a
+                                        href="https://www.spotify.com/in-en/family/?ref=spotifycom_footer_premium_family">Premimum
+                                        Family</a></li>
+                                <li><a
+                                        href="https://www.spotify.com/in-en/student/?ref=spotifycom_footer_premium_student">Premimum
+                                        Student</a></li>
+                                <li><a href="https://www.spotify.com/in-en/free/?ref=spotifycom_footer_free">Spotify
+                                        Free</a></li>
+                            </ul>
+                        </div>
+                        <div class="media flex">
+                            <div class="instagram">
+                                <a class="flex justifycenter aligncenter" href="https://www.instagram.com/spotify/"
+                                    target="_blank">
+                                    <img class="invertcolor" src="Assets/logo/instagram.svg" alt="instagram">
+                                </a>
+                            </div>
+
+                            <div class="twitter">
+                                <a class="flex justifycenter aligncenter hovereffect" href="https://x.com/spotify"
+                                    target="_blank">
+                                    <img src="Assets/logo/twitter.svg" alt="twitter">
+                                </a>
+                            </div>
+
+                            <div class="facebook">
+                                <a class="flex justifycenter aligncenter" href="https://www.facebook.com/Spotify"
+                                    target="_blank"><img src="Assets/logo/facebook.svg" alt="facebook"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash"></div>
+
+                    <div class="bottom flex">
+                        <div class="lbottom flex">
+                            <a href="">Legal</a>
+                            <a href="">Safety & Privacy Center</a>
+                            <a href="">Privacy Policy</a>
+                            <a href="">Cookies</a>
+                            <a href="">About Ads</a>
+                            <a href="">Accessibility</a>
+                        </div>
+                        <div class="rbottom">&copy; 2024 Spotify AB</div>
+                    </div>
+
+                </footer>
+            </div>
         </div>
     </main>
+    <script src="events.js"></script>
 </body>
 
 </html>
