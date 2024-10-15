@@ -102,17 +102,20 @@ nav {
 }
 
 .left {
-    width: 24vw;
-    height: 90vh;
+    width: 23vw;
+    height: 89vh;
     border-radius: 10px;
+    margin-left: 5px;
 }
 
 .right {
-    width: 72vw;
-    height: 90vh;
+    width: 75vw;
+    height: 89vh;
+    margin-right: 10px;
     border-radius: 10px;
     position: relative;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .container {
@@ -209,7 +212,7 @@ footer {
 
 .Albums {
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
 
 .playhead {
@@ -217,7 +220,7 @@ footer {
 }
 
 .card {
-    width: 260px;
+    width: 245px;
     height: 350px;
     overflow: hidden;
     position: relative;
@@ -226,7 +229,7 @@ footer {
 }
 
 .card img {
-    width: 238px;
+    width: 223px;
     height: 250px;
     object-fit: cover;
     border-radius: 5px;
