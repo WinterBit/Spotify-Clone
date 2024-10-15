@@ -112,6 +112,7 @@ nav {
     height: 90vh;
     border-radius: 10px;
     position: relative;
+    overflow: scroll;
 }
 
 .container {
@@ -196,9 +197,82 @@ a,
     justify-content: space-between;
 }
 
-footer{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
+footer {
     margin-bottom: 100px;
+}
+
+.playlist {
+    width: 100%;
+    margin-bottom: 70px;
+    padding: 10px;
+}
+
+.Albums {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.playhead {
+    padding: 15px;
+}
+
+.card {
+    width: 260px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.card img {
+    width: 238px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    position: absolute;
+    left: 11px;
+    top: 15px;
+}
+
+.chead {
+    position: absolute;
+    left: 11px;
+    bottom: 55px;
+}
+
+.cabout {
+    position: absolute;
+    left: 11px;
+    bottom: 30px;
+}
+
+.card:hover {
+    background-color: #1f1f1f;
+}
+
+.playbtn {
+    width: 45px;
+    height: 45px;
+    background-color: #1cd760;
+    border-radius: 30px;
+    position: absolute;
+    right: 20px;
+    bottom: 80px;
+    opacity: 0;
+    transition: all 150ms ease-out;
+}
+
+.playbtn img {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 8px;
+    left: 8px;
+}
+
+
+.card:hover .playbtn {
+    bottom: 95px;
+    opacity: 1;
 }
