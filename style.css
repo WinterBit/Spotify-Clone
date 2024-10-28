@@ -103,14 +103,14 @@ nav {
 
 .left {
     width: 23vw;
-    height: 89vh;
+    height: 100%;
     border-radius: 10px;
     margin-left: 5px;
 }
 
 .right {
     width: 75vw;
-    height: 89vh;
+    height: 100%;
     margin-right: 10px;
     border-radius: 10px;
     position: relative;
@@ -120,6 +120,7 @@ nav {
 
 .container {
     justify-content: space-around;
+    height: 80vh;
 }
 
 .library {
@@ -232,7 +233,7 @@ footer {
     width: 223px;
     height: 250px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 8px;
     position: absolute;
     left: 11px;
     top: 15px;
@@ -278,4 +279,206 @@ footer {
 .card:hover .playbtn {
     bottom: 95px;
     opacity: 1;
+}
+
+.player {
+    width: 99vw;
+    height: 9vh;
+}
+
+.info {
+    height: 100%;
+    width: 15%;
+    position: relative;
+}
+
+.controler {
+    height: 100%;
+    width: 35%;
+    position: relative;
+}
+
+.volume {
+    height: 100%;
+    width: 15%;
+    position: relative;
+}
+
+
+.info img {
+    width: 25%;
+    height: 75%;
+    object-fit: cover;
+    border-radius: 8px;
+
+    position: absolute;
+    left: 5%;
+    top: 10%;
+}
+
+.songName {
+    position: absolute;
+    left: 35%;
+    top: 25%;
+}
+
+.songArtist {
+    position: absolute;
+    left: 35%;
+    top: 48%;
+}
+
+
+#previous {
+    width: 20px;
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    transform: translate(-40%);
+}
+
+#play-pause img {
+    width: 20px;
+}
+
+#play-pause {
+    width: 32px;
+    height: 32px;
+    border-radius: 20px;
+    background: #ffffff;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#play-pause:hover {
+    transform: translate(-50%) scale(1.06);
+}
+
+#forward {
+    width: 20px;
+    position: absolute;
+    top: 15%;
+    left: 60%;
+    transform: translate(-60%);
+}
+
+#songCurrentTime {
+    position: absolute;
+    bottom: 13%;
+    left: -8%;
+}
+
+#songDuration {
+    position: absolute;
+    bottom: 13%;
+    right: -8%;
+}
+
+#seekbar {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    left: 50%;
+    bottom: 20%;
+    transform: translate(-50%);
+
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    background: #4d4c4c;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#seekbar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+#progress {
+    position: absolute;
+    left: 0%;
+    bottom: 20%;
+    width: 50%;
+    height: 5px;
+    border-radius: 20px;
+    background: #ffffff;
+    z-index: 2;
+}
+
+#circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+
+    position: absolute;
+    bottom: 17%;
+    left: 49%;
+    opacity: 0;
+    z-index: 3;
+}
+
+.volume img {
+    position: absolute;
+    width: 10%;
+    left: 0%;
+    bottom: 40%;
+}
+
+#volseekbar {
+    position: absolute;
+    bottom: 47%;
+    left: 15%;
+    width: 75%;
+}
+
+.volume input {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    height: 5px;
+    border-radius: 20px;
+    background: #4d4c4c;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.volume input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+#volprogress {
+    position: absolute;
+    left: 0%;
+    top: 53%;
+    width: 50%;
+    height: 5px;
+    border-radius: 20px;
+    background: #ffffff;
+    z-index: 2;
+}
+
+#volcircle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    left: 49%;
+    top: 35%;
+    z-index: 3;
+
+    opacity: 0;
 }

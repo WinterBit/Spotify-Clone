@@ -63,13 +63,53 @@ hoverNode(search, "fillwhite")
 hoverNode(search, "highlight")
 
 search.addEventListener("click", (e) => {
-    search.classList.add("borderwhite","clicklight","clickwhite");
+    search.classList.add("borderwhite", "clicklight", "clickwhite");
     e.stopPropagation();
 })
 
 document.body.addEventListener("click", () => {
-    search.classList.remove("borderwhite","clicklight","clickwhite");
+    search.classList.remove("borderwhite", "clicklight", "clickwhite");
 })
 
+let seekbar = document.getElementById("seekbar");
+let circle = document.getElementById("circle");
+let progress = document.getElementById("progress");
 
+seekbar.oninput = function () {
+    progress.style.width = this.value + "%";
+    circle.style.left = this.value < 1 ? this.value : (this.value - 1) + "%";
+}
 
+seekbar.addEventListener("mouseover", () => {
+    circle.style.opacity = 1;
+    progress.style.background = "#1cb955";
+})
+
+seekbar.addEventListener("mouseout", () => {
+    circle.style.opacity = 0;
+    progress.style.background = "#ffffff";
+})
+
+let pre = document.getElementById("previous");
+let forw = document.getElementById("forward");
+hoverNode(pre, "fillwhite");
+hoverNode(forw, "fillwhite");
+
+let vol = document.querySelector(".volume input");
+let volcircle = document.getElementById("volcircle");
+let volprogress = document.getElementById("volprogress");
+
+vol.oninput = function () {
+    volprogress.style.width = this.value + "%";
+    volcircle.style.left = this.value < 1 ? this.value : (this.value - 1) + "%";
+}
+
+vol.addEventListener("mouseover", () => {
+    volcircle.style.opacity = 1;
+    volprogress.style.background = "#1cb955";
+})
+
+vol.addEventListener("mouseout", () => {
+    volcircle.style.opacity = 0;
+    volprogress.style.background = "#ffffff";
+})
