@@ -106,6 +106,8 @@ nav {
     height: 100%;
     border-radius: 10px;
     margin-left: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .right {
@@ -481,4 +483,104 @@ footer {
     z-index: 3;
 
     opacity: 0;
+}
+
+.Album{
+    width: 100%;
+}
+
+.Albumhead{
+    width: 100%;
+    background: #1f1f1f;
+}
+
+.playbox{
+    margin-top: 1vh;
+    position: relative;
+    width: 95%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 5vh;
+    border-radius: 2%;
+}
+
+.index{
+    position: absolute;
+    width: 10%;
+    left: 5%;
+    top: 50%;
+    transform: translate(0%,-50%);
+}
+
+.Sname{
+    position: absolute;
+    top: 20%;
+    left: 12%;
+}
+
+.Sartist{
+    position: absolute;
+    top: 55%;
+    left: 12%;
+}
+
+.Sduration{
+    position: absolute;
+    left: 85%;
+    top: 50%;
+    transform: translate(0%,-50%);
+}
+
+.Splay{
+    position: absolute;
+    width: 10%;
+    top: 30%;
+    left: 1%;
+    background: transparent;
+}
+
+.Splay img{
+    width: 50%;
+    opacity: 0;
+}
+
+.playbox:hover{
+    background: #313637;
+}
+
+.playbox:hover img{
+    opacity: 1;
+}
+
+.Albumhead{
+    position: relative;
+    height: 15vh;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 0px 5px 15px 8px rgb(31 31 31);
+}
+
+.Albumhead img{
+    position: absolute;
+    height: 80%;
+    left: 3%;
+    top: 8%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 7px rgb(0 0 0 / 30%);
+}
+
+.Albumhead img:hover{
+    transform: scale(1.03);
+}
+
+.Aname{
+    position: absolute;
+    left: 35%;
+    top: 20%;
+}
+
+.Aartist{
+    position: absolute;
+    left: 37%;
+    top: 55%;
 }

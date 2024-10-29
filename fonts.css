@@ -62,3 +62,43 @@
     font-size: 12px;
     color: #b3b3b3;
 }
+
+.Sname{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #fff;
+}
+
+.Sartist{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10px;
+    color: #b3b3b3;
+}
+
+.index,.Sduration{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+.Aname{
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 40px;
+    color: #ffffff; 
+}
+
+.Aartist{
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 10px;
+    color: #ffffff;
+}
