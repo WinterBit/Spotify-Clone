@@ -407,7 +407,7 @@ footer {
     position: absolute;
     left: 0%;
     bottom: 20%;
-    width: 50%;
+    width: 0%;
     height: 5px;
     border-radius: 20px;
     background: #ffffff;
@@ -422,7 +422,7 @@ footer {
 
     position: absolute;
     bottom: 17%;
-    left: 49%;
+    left: 0%;
     opacity: 0;
     z-index: 3;
 }
@@ -485,16 +485,16 @@ footer {
     opacity: 0;
 }
 
-.Album{
+.Album {
     width: 100%;
 }
 
-.Albumhead{
+.Albumhead {
     width: 100%;
     background: #1f1f1f;
 }
 
-.playbox{
+.playbox {
     margin-top: 1vh;
     position: relative;
     width: 95%;
@@ -504,34 +504,34 @@ footer {
     border-radius: 2%;
 }
 
-.index{
+.index {
     position: absolute;
     width: 10%;
     left: 5%;
     top: 50%;
-    transform: translate(0%,-50%);
+    transform: translate(0%, -50%);
 }
 
-.Sname{
+.Sname {
     position: absolute;
     top: 20%;
     left: 12%;
 }
 
-.Sartist{
+.Sartist {
     position: absolute;
     top: 55%;
     left: 12%;
 }
 
-.Sduration{
+.Sduration {
     position: absolute;
     left: 85%;
     top: 50%;
-    transform: translate(0%,-50%);
+    transform: translate(0%, -50%);
 }
 
-.Splay{
+.Splay {
     position: absolute;
     width: 10%;
     top: 30%;
@@ -539,20 +539,20 @@ footer {
     background: transparent;
 }
 
-.Splay img{
+.Splay img {
     width: 50%;
     opacity: 0;
 }
 
-.playbox:hover{
+.playbox:hover {
     background: #313637;
 }
 
-.playbox:hover img{
+.playbox:hover img {
     opacity: 1;
 }
 
-.Albumhead{
+.Albumhead {
     position: relative;
     height: 15vh;
     left: 50%;
@@ -560,7 +560,7 @@ footer {
     box-shadow: 0px 5px 15px 8px rgb(31 31 31);
 }
 
-.Albumhead img{
+.Albumhead img {
     position: absolute;
     height: 80%;
     left: 3%;
@@ -569,17 +569,17 @@ footer {
     box-shadow: 0px 0px 10px 7px rgb(0 0 0 / 30%);
 }
 
-.Albumhead img:hover{
+.Albumhead img:hover {
     transform: scale(1.03);
 }
 
-.Aname{
+.Aname {
     position: absolute;
     left: 35%;
     top: 20%;
 }
 
-.Aartist{
+.Aartist {
     position: absolute;
     left: 37%;
     top: 55%;

@@ -75,11 +75,6 @@ let seekbar = document.getElementById("seekbar");
 let circle = document.getElementById("circle");
 let progress = document.getElementById("progress");
 
-seekbar.oninput = function () {
-    progress.style.width = this.value + "%";
-    circle.style.left = this.value < 1 ? this.value : (this.value - 1) + "%";
-}
-
 seekbar.addEventListener("mouseover", () => {
     circle.style.opacity = 1;
     progress.style.background = "#1cb955";
