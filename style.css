@@ -464,8 +464,8 @@ footer {
 #volprogress {
     position: absolute;
     left: 0%;
-    top: 53%;
-    width: 50%;
+    top: 52%;
+    width: 0%;
     height: 5px;
     border-radius: 20px;
     background: #ffffff;
@@ -478,7 +478,7 @@ footer {
     height: 12px;
     border-radius: 50%;
     background: #ffffff;
-    left: 49%;
+    left: 0%;
     top: 35%;
     z-index: 3;
 

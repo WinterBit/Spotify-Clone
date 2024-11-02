@@ -33,6 +33,9 @@ function playSong(track) {
     currentSong.src = track;
     document.getElementById("play-pause").querySelector("img").src = "Assets/logo/pause.svg";
     currentSong.play();
+    currentSong.volume = 0.5;
+    document.getElementById("volcircle").style.left = "49%";
+    document.getElementById("volprogress").style.width = "50%";
 }
 
 function pauseSong(track) {
@@ -42,7 +45,7 @@ function pauseSong(track) {
 }
 
 (async function () {
-    await fetchSongs("http://192.168.1.5:3000/assets/songs/");
+    await fetchSongs("http://192.168.1.3:3000/assets/songs/");
     console.log(SongList);
 
     for (let i = 0; i < SongList.length; i++) {
@@ -131,6 +134,8 @@ function pauseSong(track) {
         else {
             pauseSong(SongList[INDEX]);
             currentSong.currentTime = 0;
+            document.getElementById("progress").style.width = 0 + "%";
+            document.getElementById("circle").style.left = 0 + "%";
         }
     })
 
@@ -148,6 +153,8 @@ function pauseSong(track) {
         else {
             pauseSong(SongList[INDEX])
             currentSong.currentTime = 0;
+            document.getElementById("progress").style.width = 0 + "%";
+            document.getElementById("circle").style.left = 0 + "%";
         }
     })
 
@@ -162,4 +169,16 @@ function pauseSong(track) {
             currentSong.pause();
         }
     })
+
+    let volseekbar = document.querySelector("#volseekbar input");
+    let volprogress = document.getElementById("volprogress");
+    let volcircle = document.getElementById("volcircle");
+
+    volseekbar.oninput = function () {
+        console.log(this.value / 100);
+        currentSong.volume = this.value / 100;
+
+        volprogress.style.width = this.value + "%";
+        volcircle.style.left = this.value < 1 ? this.value + "%" : (this.value - 1) + "%";
+    }
 })()
