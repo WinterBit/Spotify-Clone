@@ -45,7 +45,7 @@ function pauseSong(track) {
 }
 
 (async function () {
-    await fetchSongs("http://192.168.1.3:3000/assets/songs/");
+    await fetchSongs("http://192.168.1.7:3000/assets/songs/");
     console.log(SongList);
 
     for (let i = 0; i < SongList.length; i++) {
@@ -101,6 +101,7 @@ function pauseSong(track) {
         let percentage = topercentage(currentSong.currentTime, currentSong.duration);
         circle.style.left = percentage < 1 ? percentage + "%" : (percentage - 1) + "%";
         progress.style.width = percentage + "%";
+        document.querySelector("#barprogress").style.width = percentage + "%";
 
         if (currentSong.currentTime == currentSong.duration) {
             document.getElementById("forward").click();

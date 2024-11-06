@@ -1,0 +1,439 @@
+@media (max-width:1600px) {
+    .Aname {
+        font-size: 30px;
+        font-weight: 500;
+        left: 40%;
+    }
+
+    .Aartist {
+        font-size: 10px;
+        font-weight: 400;
+        left: 42%;
+    }
+
+    #songCurrentTime {
+        left: -10%;
+    }
+
+    #songDuration {
+        right: -10%;
+    }
+}
+
+@media (max-width:1350px) {
+    .Aname {
+        font-size: 23px;
+        font-weight: 500;
+        left: 45%;
+    }
+
+    .Aartist {
+        font-size: 10px;
+        font-weight: 400;
+        left: 47%;
+    }
+
+    #songCurrentTime {
+        left: -12%;
+    }
+
+    #songDuration {
+        right: -12%;
+    }
+}
+
+@media (max-width:1100px) {
+
+    .home,
+    .search,
+    .navright,
+    .playbtn,
+    .volume {
+        display: none;
+    }
+
+    #search,
+    #openapp,
+    #hamburger,
+    #close,
+    #down {
+        display: block;
+    }
+
+    .left {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        width: 0%;
+        height: 100vh;
+        z-index: 4;
+        transition: width 300ms ease-out;
+    }
+
+
+    .right {
+        width: 95vw;
+        margin-right: 0px;
+    }
+
+    html {
+        overflow-x: hidden;
+    }
+
+    .player {
+        display: block;
+        position: absolute;
+        bottom: 0%;
+        height: 0%;
+        transition: height 300ms ease-out;
+        z-index: 3;
+        background-color: black;
+    }
+
+    #down {
+        height: 5vh;
+        width: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 3%;
+        top: 1%;
+        z-index: 3;
+        display: none;
+    }
+
+    #down img {
+        width: 40px;
+    }
+
+    .info {
+        width: 100%;
+        height: 70%;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%);
+
+        display: none;
+    }
+
+    .info img {
+        position: absolute;
+        object-fit: contain;
+        border-radius: 0px;
+        width: 95%;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%);
+    }
+
+    .songName {
+        position: absolute;
+        left: 5%;
+        top: 88%;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .songArtist {
+        position: absolute;
+        left: 5%;
+        top: 93%;
+        font-size: 15px;
+    }
+
+    .controler {
+        position: absolute;
+        height: 30%;
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 0%;
+
+        display: none;
+    }
+
+    #play-pause {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        position: absolute;
+        left: 5%;
+        top: 10%;
+    }
+
+    #previous img,
+    #forward img {
+        width: 15px;
+    }
+
+    #previous {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: #222222;
+        position: absolute;
+        left: 20%;
+        top: 10%;
+    }
+
+    #forward {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: #222222;
+        position: absolute;
+        left: 40%;
+        top: 10%;
+    }
+
+    #seekbar {
+        position: absolute;
+        width: 100%;
+        top: 45%;
+    }
+
+    #circle {
+        opacity: 1;
+        top: 43%;
+    }
+
+    #progress {
+        top: 45%;
+    }
+
+    #songCurrentTime {
+        left: 0%;
+        top: 53%;
+        font-size: 13px;
+        color: #b2b2b2;
+    }
+
+    #songDuration {
+        right: 0%;
+        top: 53%;
+        font-size: 13px;
+        color: #b2b2b2;
+    }
+
+    nav {
+        height: 60px;
+    }
+
+    .navmiddle {
+        width: 40vw;
+        align-items: center;
+    }
+
+    #search,
+    #hamburger {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #openapp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 15px;
+        width: 60px;
+        background-color: white;
+        color: black;
+        border-radius: 20px;
+        padding: 5px 10px;
+
+        font-size: 50%;
+        font-weight: 900;
+    }
+
+    .playlist {
+        padding-left: 0px;
+    }
+
+    .Albums {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .card {
+        height: 450px;
+        width: 330px;
+        background-color: #353333;
+    }
+
+    .card img {
+        height: 350px;
+        width: 300px;
+        left: 50%;
+        transform: translate(-50%);
+        top: -5px;
+        object-fit: contain;
+    }
+
+    .chead {
+        left: 20px;
+        bottom: 90px;
+    }
+
+    .cabout {
+        left: 20px;
+        bottom: 70px;
+    }
+
+    .playbar {
+        display: block;
+        position: fixed;
+        bottom: 1%;
+        height: 9vh;
+        width: 99%;
+        margin: auto;
+        background-color: #141414;
+        border-radius: 5px;
+        z-index: 2;
+    }
+
+    .barimg {
+        position: absolute;
+        width: 15%;
+        height: 75%;
+        top: 8%;
+        left: 1%;
+    }
+
+    .barimg img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .barSname {
+        position: absolute;
+        width: 50%;
+        left: 18%;
+        top: 17%;
+
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    #barseek {
+        position: absolute;
+        height: 5%;
+        width: 100%;
+        bottom: 0%;
+        background-color: #4d4747;
+        border-radius: 5px;
+    }
+
+    #barprogress {
+        position: absolute;
+        height: 5%;
+        width: 0%;
+        bottom: 0%;
+        left: 0%;
+
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .barbuttons {
+        position: absolute;
+        width: 15%;
+        height: 40%;
+        top: 50%;
+        transform: translate(0%, -65%);
+        right: 2%;
+    }
+
+    .barbuttons img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        fill: white;
+    }
+
+    .top,
+    .bottom,
+    .lbottom {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    #close {
+        position: absolute;
+        top: 2%;
+        right: 5%;
+    }
+
+    .Albumhead {
+        height: 35vh;
+        padding-bottom: 5vh;
+        margin-bottom: 5vh;
+    }
+
+    .Albumhead img {
+        position: absolute;
+        left: 50%;
+        top: 5%;
+        transform: translate(-50%);
+    }
+
+    .Albumhead img:hover {
+        transform: translate(-50%);
+    }
+
+    .Aname {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        top: 88%;
+    }
+
+    .Aartist {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        top: 99%;
+    }
+
+    .index,
+    .Splay {
+        display: none;
+    }
+
+    .playbox {
+        height: 5vh;
+    }
+
+    .playbox:hover {
+        background-color: #121212;
+    }
+
+    .Sname {
+        left: 5%;
+        font-size: 15px;
+        top: 10%;
+    }
+
+    .Sartist {
+        left: 5%;
+        top: 60%;
+        font-size: 12px;
+    }
+
+    .Sduration {
+        left: 88%;
+        font-size: 13px;
+    }
+}

@@ -108,3 +108,34 @@ vol.addEventListener("mouseout", () => {
     volcircle.style.opacity = 0;
     volprogress.style.background = "#ffffff";
 })
+
+let hamburger = document.getElementById("hamburger");
+let close = document.getElementById("close");
+let playbar = document.querySelector(".playbar");
+let down = document.getElementById("down");
+
+hamburger.addEventListener("click", e => {
+    document.querySelector(".left").style.width = "100%";
+})
+
+close.addEventListener("click", e => {
+    document.querySelector(".left").style.width = "0%";
+})
+
+playbar.addEventListener("click", e => {
+    document.querySelector(".player").style.height = "100%";
+    document.querySelector("#down").style.display = "block";
+    document.querySelector(".info").style.display = "block";
+    document.querySelector(".controler").style.display = "block";
+})
+
+down.addEventListener("click", e => {
+    document.querySelector(".player").style.height = "0%";
+    document.querySelector("#down").style.display = "none";
+    document.querySelector(".info").style.display = "none";
+    document.querySelector(".controler").style.display = "none";
+})
+
+seekbar.addEventListener("timeupdate", e => {
+    console.log(seekbar.value);
+})

@@ -63,7 +63,7 @@
     color: #b3b3b3;
 }
 
-.Sname{
+.Sname {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -71,7 +71,7 @@
     color: #fff;
 }
 
-.Sartist{
+.Sartist {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -79,7 +79,8 @@
     color: #b3b3b3;
 }
 
-.index,.Sduration{
+.index,
+.Sduration {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -87,17 +88,17 @@
     color: #b3b3b3;
 }
 
-.Aname{
+.Aname {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-style: normal;
     font-size: 40px;
-    color: #ffffff; 
+    color: #ffffff;
 }
 
-.Aartist{
+.Aartist {
     font-family: "Roboto", sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
     font-size: 10px;
     color: #ffffff;

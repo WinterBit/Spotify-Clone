@@ -9,8 +9,7 @@ body {
 }
 
 nav {
-    padding: 15px;
-    padding-bottom: 0px;
+    padding: 0px 15px;
     height: 80px;
     justify-content: space-between;
 }
@@ -327,7 +326,7 @@ footer {
 .songArtist {
     position: absolute;
     left: 35%;
-    top: 48%;
+    top: 52%;
 }
 
 
@@ -583,4 +582,13 @@ footer {
     position: absolute;
     left: 37%;
     top: 55%;
+}
+
+#search,
+#openapp,
+#hamburger,
+#close,
+#down,
+.playbar {
+    display: none;
 }
