@@ -1,5 +1,6 @@
 console.log("Let the Backend Begin");
 let SongList = [];
+let AlbumList = [];
 let INDEX = 0;
 let currentSong = new Audio();
 
@@ -13,8 +14,54 @@ function topercentage(num, total) {
     return (num / total) * 100;
 }
 
-async function fetchSongs(link) {
+async function fetchAlbums(link) {
     let response = await fetch(link);
+    let responseText = await response.text();
+
+    let div = document.createElement("div");
+    div.innerHTML = responseText;
+
+    let ancr = div.getElementsByTagName("a");
+
+    Array.from(ancr).forEach(element => {
+        if (element.href.includes('/songs/') && !element.href.includes(".DS_Store")) {
+            AlbumList.push(element.href);
+        }
+    });
+    console.log(AlbumList);
+
+    for (let i = 0; i < AlbumList.length; i++) {
+        let card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `  <img src="" alt="thumnail">
+                            <div class="chead"></div>
+                            <div class="cabout"></div>
+                            <div class="playbtn"><img src="Assets/logo/play button.svg" alt="playbutton"></div>
+                         `
+
+        let url = await fetch(AlbumList[i] + "info.json");
+        let info = await url.json();
+        let chead = info.title;
+        let cabout = info.artist;
+        let img = await AlbumList[i] + "cover.jpeg";
+
+        card.querySelector(".chead").innerHTML = chead;
+        card.querySelector(".cabout").innerHTML = cabout;
+        card.querySelector("img").src = img;
+        card.setAttribute("data-folder", chead);
+
+        document.querySelector(".Albums").append(card);
+    }
+}
+
+async function fetchSongs(link) {
+    SongList = [];
+    let old = document.querySelectorAll(".playbox");
+    old.forEach(element => {
+        element.remove();
+    });
+
+    let response = await fetch(`assets/songs/${link}`);
     let responseText = await response.text();
 
     let div = document.createElement("div");
@@ -27,26 +74,7 @@ async function fetchSongs(link) {
             SongList.push(e.href);
         }
     }
-}
 
-function playSong(track) {
-    currentSong.src = track;
-    document.getElementById("play-pause").querySelector("img").src = "Assets/logo/pause.svg";
-    currentSong.play();
-    currentSong.volume = 0.5;
-    document.getElementById("volcircle").style.left = "49%";
-    document.getElementById("volprogress").style.width = "50%";
-}
-
-function pauseSong(track) {
-    currentSong.src = track;
-    document.getElementById("play-pause").querySelector("img").src = "Assets/logo/play.svg";
-    currentSong.pause();
-}
-
-(async function () {
-    await fetchSongs("http://192.168.1.7:3000/assets/songs/");
-    console.log(SongList);
 
     for (let i = 0; i < SongList.length; i++) {
         let playbox = document.createElement("div");
@@ -61,7 +89,9 @@ function pauseSong(track) {
 
         let song = SongList[i].split("/songs/")[1];
         song = song.replaceAll("%20", " ")
-        song = song.slice(0, song.length - 4);
+        song = song.slice(0, song.length - 4)
+        song = song.split("/")[1];
+
         let Sname = song.split(" - ")[0];
         let Sartist = song.split(" - ")[1];
 
@@ -92,6 +122,26 @@ function pauseSong(track) {
         })
     });
 
+}
+
+function playSong(track) {
+    currentSong.src = track;
+    document.getElementById("play-pause").querySelector("img").src = "Assets/logo/pause.svg";
+    currentSong.play();
+    currentSong.volume = 1;
+    document.getElementById("volcircle").style.left = "99%";
+    document.getElementById("volprogress").style.width = "100%";
+}
+
+function pauseSong(track) {
+    currentSong.src = track;
+    document.getElementById("play-pause").querySelector("img").src = "Assets/logo/play.svg";
+    currentSong.pause();
+}
+
+
+(async function () {
+    await fetchAlbums("assets/songs")
     let seekbar = document.getElementById("seekbar");
     let circle = document.getElementById("circle");
     let progress = document.getElementById("progress");
@@ -111,8 +161,6 @@ function pauseSong(track) {
     seekbar.oninput = function () {
         progress.style.width = this.value + "%";
         circle.style.left = this.value < 1 ? this.value : (this.value - 1) + "%";
-        console.log(this.value);
-
         currentSong.currentTime = (this.value / 100) * currentSong.duration;
     }
 
@@ -123,7 +171,6 @@ function pauseSong(track) {
     previous.addEventListener("click", e => {
         if (INDEX > 0) {
             INDEX--;
-            console.log(INDEX);
             playSong(SongList[INDEX]);
             let playbox = document.querySelector(`[data-index = "${INDEX}"`);
 
@@ -176,10 +223,18 @@ function pauseSong(track) {
     let volcircle = document.getElementById("volcircle");
 
     volseekbar.oninput = function () {
-        console.log(this.value / 100);
         currentSong.volume = this.value / 100;
 
         volprogress.style.width = this.value + "%";
         volcircle.style.left = this.value < 1 ? this.value + "%" : (this.value - 1) + "%";
     }
+
+    let CARD = document.querySelectorAll(".card");
+    console.log(CARD);
+    CARD.forEach(element => {
+        element.addEventListener("click", async e => {
+            console.log("clicked");
+            await fetchSongs(element.dataset.folder);
+        })
+    });
 })()
