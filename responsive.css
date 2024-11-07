@@ -401,10 +401,7 @@
     }
 
     .Aartist {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-        top: 99%;
+        display: none;
     }
 
     .index,

@@ -28,7 +28,6 @@ async function fetchAlbums(link) {
             AlbumList.push(element.href);
         }
     });
-    console.log(AlbumList);
 
     for (let i = 0; i < AlbumList.length; i++) {
         let card = document.createElement("div");
@@ -117,6 +116,7 @@ async function fetchSongs(link) {
             playSong(SongList[INDEX]);
 
             document.querySelector(".songName").innerHTML = element.querySelector(".Sname").innerHTML;
+            document.querySelector(".barSname").innerHTML = element.querySelector(".Sname").innerHTML;
             document.querySelector(".songArtist").innerHTML = element.querySelector(".Sartist").innerHTML;
             document.getElementById("songDuration").innerHTML = element.querySelector(".Sduration").innerHTML;
         })
@@ -127,6 +127,12 @@ async function fetchSongs(link) {
 function playSong(track) {
     currentSong.src = track;
     document.getElementById("play-pause").querySelector("img").src = "Assets/logo/pause.svg";
+    document.querySelector(".barbuttons img").src = "Assets/logo/pause.svg";
+
+    Array.from(document.querySelectorAll(".Sname")).forEach(element => {
+        element.style.color = "#fff";
+    })
+    document.querySelector(`[data-index="${INDEX}"] .Sname`).style.color = "#1cd760";
     currentSong.play();
     currentSong.volume = 1;
     document.getElementById("volcircle").style.left = "99%";
@@ -136,6 +142,7 @@ function playSong(track) {
 function pauseSong(track) {
     currentSong.src = track;
     document.getElementById("play-pause").querySelector("img").src = "Assets/logo/play.svg";
+    document.querySelector(".barbuttons img").src = "Assets/logo/play.svg";
     currentSong.pause();
 }
 
@@ -175,6 +182,7 @@ function pauseSong(track) {
             let playbox = document.querySelector(`[data-index = "${INDEX}"`);
 
             document.querySelector(".songName").innerHTML = playbox.querySelector(".Sname").innerHTML;
+            document.querySelector(".barSname").innerHTML = playbox.querySelector(".Sname").innerHTML;
             document.querySelector(".songArtist").innerHTML = playbox.querySelector(".Sartist").innerHTML;
             document.getElementById("songDuration").innerHTML = playbox.querySelector(".Sduration").innerHTML;
         }
@@ -194,6 +202,7 @@ function pauseSong(track) {
             let playbox = document.querySelector(`[data-index = "${INDEX}"`);
 
             document.querySelector(".songName").innerHTML = playbox.querySelector(".Sname").innerHTML;
+            document.querySelector(".barSname").innerHTML = playbox.querySelector(".Sname").innerHTML;
             document.querySelector(".songArtist").innerHTML = playbox.querySelector(".Sartist").innerHTML;
             document.getElementById("songDuration").innerHTML = playbox.querySelector(".Sduration").innerHTML;
         }
@@ -209,11 +218,14 @@ function pauseSong(track) {
     play_pause.addEventListener("click", e => {
         if (currentSong.paused) {
             play_pause.querySelector("img").src = "Assets/logo/pause.svg";
+            document.querySelector(".barbuttons img").src = "Assets/logo/pause.svg";
+
             currentSong.play();
         }
 
         else {
             play_pause.querySelector("img").src = "Assets/logo/play.svg";
+            document.querySelector(".barbuttons img").src = "Assets/logo/play.svg";
             currentSong.pause();
         }
     })
@@ -230,11 +242,34 @@ function pauseSong(track) {
     }
 
     let CARD = document.querySelectorAll(".card");
-    console.log(CARD);
     CARD.forEach(element => {
         element.addEventListener("click", async e => {
-            console.log("clicked");
             await fetchSongs(element.dataset.folder);
+            let img = document.querySelector(".Albumhead img");
+            let Aname = document.querySelector(".Aname");
+            let Aartist = document.querySelector(".Aartist");
+            let infoImg = document.querySelector(".info img");
+            let barimg = document.querySelector(".barimg img")
+            img.src = element.getElementsByTagName("img")[0].src;
+            if (element.querySelector(".chead").innerHTML.length > 8) {
+                Aname.style.fontSize = "25px";
+                if (window.innerWidth <= 1100) {
+                    Aname.style.fontSize = "15px";
+                }
+            }
+
+            else {
+                Aname.style.fontSize = "40px";
+            }
+
+            Aname.innerHTML = element.querySelector(".chead").innerHTML;
+            Aartist.innerHTML = element.querySelector(".cabout").innerHTML;
+            infoImg.src = element.getElementsByTagName("img")[0].src;
+            barimg.src = element.getElementsByTagName("img")[0].src;
+
+            if (window.innerWidth <= 1100) {
+                document.getElementById("hamburger").click()
+            }
         })
     });
 })()

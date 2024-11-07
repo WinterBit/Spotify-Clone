@@ -234,7 +234,7 @@ footer {
 .card img {
     width: 223px;
     height: 250px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     position: absolute;
     left: 11px;
@@ -244,13 +244,13 @@ footer {
 .chead {
     position: absolute;
     left: 11px;
-    bottom: 55px;
+    bottom: 40px;
 }
 
 .cabout {
     position: absolute;
     left: 11px;
-    bottom: 30px;
+    bottom: 20px;
 }
 
 .card:hover {
@@ -551,6 +551,9 @@ footer {
 .playbox:hover img {
     opacity: 1;
 }
+.playbox:hover .index {
+    opacity: 0;
+}
 
 .Albumhead {
     position: relative;
@@ -582,7 +585,7 @@ footer {
 .Aartist {
     position: absolute;
     left: 37%;
-    top: 55%;
+    top: 65%;
 }
 
 #search,
