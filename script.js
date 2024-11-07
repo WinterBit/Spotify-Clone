@@ -244,7 +244,12 @@ function pauseSong(track) {
     let CARD = document.querySelectorAll(".card");
     CARD.forEach(element => {
         element.addEventListener("click", async e => {
+            INDEX = 0;
             await fetchSongs(element.dataset.folder);
+            playSong(SongList[INDEX]);
+            document.querySelector(".songName").innerHTML = document.querySelector(`[data-index="${INDEX}"] .Sname`).innerHTML;
+            document.querySelector(".barSname").innerHTML = document.querySelector(`[data-index="${INDEX}"] .Sname`).innerHTML;
+            document.querySelector(".songArtist").innerHTML = document.querySelector(`[data-index="${INDEX}"] .Sartist`).innerHTML;
             let img = document.querySelector(".Albumhead img");
             let Aname = document.querySelector(".Aname");
             let Aartist = document.querySelector(".Aartist");
